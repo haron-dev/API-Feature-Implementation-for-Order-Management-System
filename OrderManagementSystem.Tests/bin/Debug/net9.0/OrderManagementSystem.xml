@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrderManagementSystem</name>
+    </assembly>
+    <members>
+        <member name="M:OrderManagementSystem.Controllers.DiscountsController.#ctor(OrderManagementSystem.Services.IDiscountService)">
+            <param name="discountService">Discount service</param>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.DiscountsController.GetAllDiscounts">
+            <returns>List of all discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.DiscountsController.GetDiscountsBySegment(OrderManagementSystem.Models.CustomerSegment)">
+            <param name="segment">Customer segment</param>
+            <returns>List of applicable discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.OrdersController.#ctor(OrderManagementSystem.Services.IOrderService)">
+            <param name="orderService">Order service</param>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.OrdersController.GetAllOrders">
+            <returns>List of all orders</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.OrdersController.GetOrderById(System.Int32)">
+            <param name="id">Order ID</param>
+            <returns>Order if found</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.OrdersController.CreateOrder(OrderManagementSystem.Models.Order)">
+            <param name="order">Order to create</param>
+            <returns>Created order</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.OrdersController.UpdateOrderStatus(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <param name="id">Order ID</param>
+            <param name="status">New status</param>
+            <param name="notes">Optional notes</param>
+            <returns>Updated order</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Controllers.OrdersController.GetOrderAnalytics">
+            <returns>Order analytics data</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Extensions.ServiceCollectionExtensions.Decorate``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <typeparam name="TService">The service type</typeparam>
+            <typeparam name="TDecorator">The decorator type</typeparam>
+            <param name="services">The service collection</param>
+            <returns>The service collection for chaining</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Extensions.ServiceCollectionExtensions.FindServiceDescriptor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <typeparam name="T">The service type</typeparam>
+            <param name="services">The service collection</param>
+            <returns>The service descriptor if found, null otherwise</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.GetByIdAsync(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.GetAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.FindAsync(System.Linq.Expressions.Expression{System.Func{OrderManagementSystem.Models.Discount,System.Boolean}})">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.AddAsync(OrderManagementSystem.Models.Discount)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.UpdateAsync(OrderManagementSystem.Models.Discount)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.RemoveAsync(OrderManagementSystem.Models.Discount)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.GetActiveDiscountsBySegmentAsync(OrderManagementSystem.Models.CustomerSegment)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.GetActiveDiscountsByOrderCountAsync(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.GetActiveDiscountsByOrderValueAsync(System.Decimal)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.DiscountRepository.GetAllActiveDiscountsAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IDiscountRepository.GetActiveDiscountsBySegmentAsync(OrderManagementSystem.Models.CustomerSegment)">
+            <param name="segment">Customer segment</param>
+            <returns>Collection of applicable discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IDiscountRepository.GetActiveDiscountsByOrderCountAsync(System.Int32)">
+            <param name="orderCount">Order count</param>
+            <returns>Collection of applicable discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IDiscountRepository.GetActiveDiscountsByOrderValueAsync(System.Decimal)">
+            <param name="orderValue">Order value</param>
+            <returns>Collection of applicable discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IDiscountRepository.GetAllActiveDiscountsAsync">
+            <returns>Collection of active discounts</returns>
+        </member>
+        <member name="T:OrderManagementSystem.Repositories.InMemoryRepository`2">
+            <typeparam name="T">Entity type</typeparam>
+            <typeparam name="TKey">Key type</typeparam>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.#ctor(System.Func{`0,`1},System.Func{`0,System.Int32},System.Action{`0,System.Int32})">
+            <param name="keySelector">Function to extract the key from an entity</param>
+            <param name="idSelector">Function to extract the ID from an entity</param>
+            <param name="idSetter">Action to set the ID on an entity</param>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.GetByIdAsync(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.GetAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.FindAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.AddAsync(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.UpdateAsync(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.InMemoryRepository`2.RemoveAsync(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IOrderRepository.GetOrdersByCustomerIdAsync(System.Int32)">
+            <param name="customerId">Customer ID</param>
+            <returns>Collection of orders for the customer</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IOrderRepository.GetOrdersByStatusAsync(OrderManagementSystem.Models.OrderStatus)">
+            <param name="status">Order status</param>
+            <returns>Collection of orders with the specified status</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IOrderRepository.GetOrdersByDateRangeAsync(System.DateTime,System.DateTime)">
+            <param name="startDate">Start date</param>
+            <param name="endDate">End date</param>
+            <returns>Collection of orders within the date range</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IOrderRepository.UpdateOrderStatusAsync(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <param name="orderId">Order ID</param>
+            <param name="newStatus">New status</param>
+            <param name="notes">Optional notes</param>
+            <returns>Updated order</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IOrderRepository.GetOrderAnalyticsAsync">
+            <returns>Order analytics data</returns>
+        </member>
+        <member name="T:OrderManagementSystem.Repositories.IRepository`1">
+            <typeparam name="T">Entity type</typeparam>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IRepository`1.GetByIdAsync(System.Int32)">
+            <param name="id">Entity identifier</param>
+            <returns>Entity if found, null otherwise</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IRepository`1.GetAllAsync">
+            <returns>Collection of all entities</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IRepository`1.FindAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <param name="predicate">Search predicate</param>
+            <returns>Collection of matching entities</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IRepository`1.AddAsync(`0)">
+            <param name="entity">Entity to add</param>
+            <returns>Added entity</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IRepository`1.UpdateAsync(`0)">
+            <param name="entity">Entity to update</param>
+            <returns>Updated entity</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.IRepository`1.RemoveAsync(`0)">
+            <param name="entity">Entity to remove</param>
+            <returns>True if removed, false otherwise</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.GetByIdAsync(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.GetAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.FindAsync(System.Linq.Expressions.Expression{System.Func{OrderManagementSystem.Models.Order,System.Boolean}})">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.AddAsync(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.UpdateAsync(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.RemoveAsync(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.GetOrdersByCustomerIdAsync(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.GetOrdersByStatusAsync(OrderManagementSystem.Models.OrderStatus)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.GetOrdersByDateRangeAsync(System.DateTime,System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.UpdateOrderStatusAsync(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Repositories.OrderRepository.GetOrderAnalyticsAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.#ctor(OrderManagementSystem.Services.IDiscountService,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <param name="discountService">The underlying discount service to decorate</param>
+            <param name="cache">Memory cache</param>
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.CalculateDiscount(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.CalculateDiscountAsync(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.GetAllDiscounts">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.GetAllDiscountsAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.GetDiscountsBySegment(OrderManagementSystem.Models.CustomerSegment)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.CachedDiscountService.GetDiscountsBySegmentAsync(OrderManagementSystem.Models.CustomerSegment)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.#ctor(OrderManagementSystem.Repositories.IDiscountRepository)">
+            <param name="discountRepository">Discount repository</param>
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.CalculateDiscountAsync(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.CalculateDiscount(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.GetAllDiscountsAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.GetAllDiscounts">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.GetDiscountsBySegmentAsync(OrderManagementSystem.Models.CustomerSegment)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.DiscountService.GetDiscountsBySegment(OrderManagementSystem.Models.CustomerSegment)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.IDiscountService.CalculateDiscount(OrderManagementSystem.Models.Order)">
+            <param name="order">The order to calculate discount for</param>
+            <returns>The calculated discount amount</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IDiscountService.CalculateDiscountAsync(OrderManagementSystem.Models.Order)">
+            <param name="order">The order to calculate discount for</param>
+            <returns>The calculated discount amount</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IDiscountService.GetAllDiscounts">
+            <returns>List of all discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IDiscountService.GetAllDiscountsAsync">
+            <returns>List of all discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IDiscountService.GetDiscountsBySegment(OrderManagementSystem.Models.CustomerSegment)">
+            <param name="segment">Customer segment</param>
+            <returns>List of applicable discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IDiscountService.GetDiscountsBySegmentAsync(OrderManagementSystem.Models.CustomerSegment)">
+            <param name="segment">Customer segment</param>
+            <returns>List of applicable discounts</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.GetOrderById(System.Int32)">
+            <param name="id">Order ID</param>
+            <returns>The order if found, null otherwise</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.GetOrderByIdAsync(System.Int32)">
+            <param name="id">Order ID</param>
+            <returns>The order if found, null otherwise</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.GetAllOrders">
+            <returns>List of all orders</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.GetAllOrdersAsync">
+            <returns>List of all orders</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.CreateOrder(OrderManagementSystem.Models.Order)">
+            <param name="order">Order to create</param>
+            <returns>Created order with ID</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.CreateOrderAsync(OrderManagementSystem.Models.Order)">
+            <param name="order">Order to create</param>
+            <returns>Created order with ID</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.UpdateOrderStatus(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <param name="orderId">Order ID</param>
+            <param name="newStatus">New status</param>
+            <param name="notes">Optional notes about the status change</param>
+            <returns>Updated order</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <param name="orderId">Order ID</param>
+            <param name="newStatus">New status</param>
+            <param name="notes">Optional notes about the status change</param>
+            <returns>Updated order</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.GetOrderAnalytics">
+            <returns>Order analytics data</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.IOrderService.GetOrderAnalyticsAsync">
+            <returns>Order analytics data</returns>
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.#ctor(OrderManagementSystem.Repositories.IOrderRepository,OrderManagementSystem.Services.IDiscountService)">
+            <param name="orderRepository">Order repository</param>
+            <param name="discountService">Discount service</param>
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.GetOrderById(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.GetOrderByIdAsync(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.GetAllOrders">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.GetAllOrdersAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.CreateOrder(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.CreateOrderAsync(OrderManagementSystem.Models.Order)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.UpdateOrderStatus(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.UpdateOrderStatusAsync(System.Int32,OrderManagementSystem.Models.OrderStatus,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.GetOrderAnalytics">
+            <inheritdoc />
+        </member>
+        <member name="M:OrderManagementSystem.Services.OrderService.GetOrderAnalyticsAsync">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,89 @@
+@OrderManagementSystem_HostAddress = http://localhost:5197
+
+### Get all orders
+GET {{OrderManagementSystem_HostAddress}}/api/orders
+Accept: application/json
+
+### Get order by ID (replace 1 with an actual order ID)
+GET {{OrderManagementSystem_HostAddress}}/api/orders/1
+Accept: application/json
+
+### Create a new order
+POST {{OrderManagementSystem_HostAddress}}/api/orders
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 0,
+  "customerId": 1,
+  "customerSegment": "Regular",
+  "orderDate": "2023-07-06T00:00:00.000Z",
+  "totalAmount": 100.00,
+  "status": "Created",
+  "items": [
+    {
+      "id": 0,
+      "productId": 1,
+      "quantity": 2,
+      "unitPrice": 50.00
+    }
+  ]
+}
+
+### Create a Gold customer order (for testing discount)
+POST {{OrderManagementSystem_HostAddress}}/api/orders
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 0,
+  "customerId": 2,
+  "customerSegment": "Gold",
+  "orderDate": "2023-07-06T00:00:00.000Z",
+  "totalAmount": 600.00,
+  "status": "Created",
+  "items": [
+    {
+      "id": 0,
+      "productId": 2,
+      "quantity": 3,
+      "unitPrice": 200.00
+    }
+  ]
+}
+
+### Update order status (replace 1 with an actual order ID)
+PUT {{OrderManagementSystem_HostAddress}}/api/orders/1/status?status=Processing&notes=Order is being processed
+Accept: application/json
+
+### Update order status to Shipped (replace 1 with an actual order ID)
+PUT {{OrderManagementSystem_HostAddress}}/api/orders/1/status?status=Shipped&notes=Order has been shipped
+Accept: application/json
+
+### Update order status to Delivered (replace 1 with an actual order ID)
+PUT {{OrderManagementSystem_HostAddress}}/api/orders/1/status?status=Delivered&notes=Order has been delivered
+Accept: application/json
+
+### Get order analytics
+GET {{OrderManagementSystem_HostAddress}}/api/orders/analytics
+Accept: application/json
+
+### Get all discounts
+GET {{OrderManagementSystem_HostAddress}}/api/discounts
+Accept: application/json
+
+### Get discounts for Regular customers
+GET {{OrderManagementSystem_HostAddress}}/api/discounts/by-segment/Regular
+Accept: application/json
+
+### Get discounts for Silver customers
+GET {{OrderManagementSystem_HostAddress}}/api/discounts/by-segment/Silver
+Accept: application/json
+
+### Get discounts for Gold customers
+GET {{OrderManagementSystem_HostAddress}}/api/discounts/by-segment/Gold
+Accept: application/json
+
+### Get discounts for Platinum customers
+GET {{OrderManagementSystem_HostAddress}}/api/discounts/by-segment/Platinum
+Accept: application/json
